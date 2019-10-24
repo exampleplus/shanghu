@@ -1,0 +1,240 @@
+{
+    "description": "项目配置文件。",
+    "setting": {
+        "urlCheck": false,
+        "es6": true,
+        "postcss": false,
+        "minified": true,
+        "newFeature": true,
+        "nodeModules": true,
+        "autoAudits": false,
+        "checkInvalidKey": true,
+        "enhance": true,
+        "coverView": true,
+        "checkSiteMap": true,
+        "uploadWithSourceMap": true,
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        }
+    },
+    "miniprogramRoot": "dist/wx/",
+    "compileType": "miniprogram",
+    "appid": "wx410568498f3c9cba",
+    "projectname": "shanghu",
+    "simulatorType": "wechat",
+    "simulatorPluginLibVersion": {},
+    "libVersion": "2.7.7",
+    "condition": {
+        "search": {
+            "current": -1,
+            "list": []
+        },
+        "conversation": {
+            "current": -1,
+            "list": []
+        },
+        "plugin": {
+            "current": -1,
+            "list": []
+        },
+        "game": {
+            "currentL": -1,
+            "list": []
+        },
+        "miniprogram": {
+            "current": 26,
+            "list": [{
+                    "id": 5,
+                    "name": "商品详情",
+                    "pathName": "pages/goodsDetail/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "素材列表",
+                    "pathName": "pages/sourceList/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "确认订单",
+                    "pathName": "pages/order/confirmOrder/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "支付成功",
+                    "pathName": "pages/order/paySuccess/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "评价",
+                    "pathName": "pages/relanchEvaluate/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 5,
+                    "name": "pages/diy/main",
+                    "pathName": "pages/diy/main",
+                    "query": "type=1&isShowBtn=1",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的",
+                    "pathName": "pages/user/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "设计师管理",
+                    "pathName": "pages/personalCenter/designer/designerManager/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": 8,
+                    "name": "砍价详情",
+                    "pathName": "pages/order/bargainDetail/main",
+                    "query": "id=474",
+                    "scene": null
+                },
+                {
+                    "id": 9,
+                    "name": "分销收入明细",
+                    "pathName": "pages/personalCenter/distribution/incomeDetail/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "店铺详情",
+                    "pathName": "pages/storePage/main",
+                    "query": "shopId=1&isSelf=0",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "成为商家",
+                    "pathName": "pages/personalCenter/becomeStore/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "店铺收入明细",
+                    "pathName": "pages/personalCenter/store/incomeDetail/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "团队订单",
+                    "pathName": "pages/order/teamOrder/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "调试",
+                    "pathName": "pages/order/teamOrder/designDetail/main",
+                    "query": "groupDiyId=1066",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "砍价",
+                    "pathName": "pages/order/shareBargainDetail/main",
+                    "query": "id=751&goodsNum=1&goodsId=1567&skuId=33873",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "砍价",
+                    "pathName": "pages/order/shareBargainDetail/main",
+                    "query": "id=760&goodsNum=1&goodsId=1567&skuId=33873",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "砍价",
+                    "pathName": "pages/order/shareBargainDetail/main",
+                    "query": "id=763&goodsNum=1&goodsId=1567&skuId=33873",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "我的二维码",
+                    "pathName": "pages/personalCenter/distributionQrcode/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "阿萨德",
+                    "pathName": "pages/order/shareBargainDetail/main",
+                    "query": "id=774&goodsNum=1&goodsId=1567&skuId=33873",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "注册",
+                    "pathName": "pages/regisiter/main",
+                    "query": "",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "砍价信息",
+                    "pathName": "pages/order/shareBargainDetail/main",
+                    "query": "id=866&goodsNum=1&goodsId=2518&skuId=42141",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "砍价信息",
+                    "pathName": "pages/order/shareBargainDetail/main",
+                    "query": "id=841&goodsNum=1&goodsId=1570&skuId=33879",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "砍价id",
+                    "pathName": "pages/bargainDetail/main",
+                    "query": "goodsId=2518",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "设计师首页",
+                    "pathName": "pages/designerDetail/main",
+                    "query": "designerId=10010275&isSelf=0",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "个人diy",
+                    "pathName": "pages/diy/main",
+                    "query": "type=0&isShowBtn=1",
+                    "scene": null
+                },
+                {
+                    "id": -1,
+                    "name": "个人diy",
+                    "pathName": "pages/diy/main",
+                    "query": "type=1&isShowBtn=1",
+                    "scene": null
+                }
+            ]
+        }
+    }
+}

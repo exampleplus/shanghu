@@ -1,0 +1,64 @@
+<html>
+<!--点图片，光标到下一个DIV内，如果没用DIV就创建一个新的-->
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'custom';
+        }
+    </style>
+</head>
+
+
+<body>
+    <div>
+        造字工房凌黑
+        <canvas id="canvas"></canvas>
+    </div>
+    <script type="text/javascript" src="https://res.wx.qq.com/open/js/jweixin-1.3.2.js"></script>
+    <script>
+        let params = new URLSearchParams(location.search);
+        let url = params.get('url');
+        let text = params.get('text');
+        let width = params.get('width');
+        let height = params.get('height');
+        let canvas = document.getElementById("canvas");
+        canvas.width = width;
+        canvas.height = height;
+        let context = canvas.getContext("2d");
+        context.font = `${height}px custom`;
+        context.textBaseline = "top";
+        loadFont('./xxxxxx.ttf').then(() => {
+            context.fillText("造字工房凌黑", 0, 0);
+            let url = canvas.toDataURL("image/png");
+
+            // wx.miniProgram.navigateTo({
+            //     url: '/pages/diy/main'
+            // })
+            wx.miniProgram.postMessage({
+                data: url
+            });
+        })
+
+        function loadFont(url) {
+            // return fetch(url).then(() => {
+            return new Promise(reslove => {
+                    let style = document.createElement('style');
+                    style.innerHTML = `@font-face {
+                    font-family: 'custom';
+                    src: url('${url}');
+                }`;
+                    document.head.appendChild(style);
+                    setTimeout(reslove, 100)
+                })
+                // })
+        }
+    </script>
+</body>
+
+</html>

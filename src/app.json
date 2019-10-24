@@ -1,0 +1,125 @@
+{
+    "pages": [
+        "pages/home/main",
+        "pages/regisiter/main",
+        "pages/goods/main",
+        "pages/authorization/main",
+        "pages/search/main",
+        "pages/searchType/main",
+        "pages/searchResult/main",
+        "pages/diy/main",
+        "pages/user/main",
+        "pages/classify/main",
+        "pages/goodsClassify/main",
+        "pages/activity/main",
+        "pages/bargainDetail/main",
+        "pages/goodsDetail/main",
+        "pages/sceneList/main",
+        "pages/sceneDetail/main",
+        "pages/secondeSceneDetail/main",
+        "pages/thirdSceneDetail/main",
+        "pages/sourceList/main",
+        "pages/sourceDetail/main",
+        "pages/storeList/main",
+        "pages/allEvaluate/main",
+        "pages/checkSheeping/main",
+        "pages/relanchEvaluate/main",
+        "pages/relanchDiyEvaluate/main",
+        "pages/relanchTeamEvaluate/main",
+        "pages/storePage/main",
+        "pages/designerList/main",
+        "pages/designerDetail/main",
+        "pages/designerDetailOld/main",
+        "pages/complainDesigner/main",
+        "pages/richText/main",
+        "pages/teamRules/main",
+        "pages/white/main"
+    ],
+    "subPackages": [{
+        "root": "pages/order/",
+        "pages": [
+            "myOrder/main",
+            "applyAftersale/main",
+            "invoinceDetail/main",
+            "orderDetail/main",
+            "quitOrder/main",
+            "quitOrderDetail/main",
+            "confirmOrder/main",
+            "bargainConfirmOrder/main",
+            "diyconfirmOrder/main",
+            "paySuccess/main",
+            "bargainOrder/main",
+            "bargainDetail/main",
+            "shareBargainDetail/main",
+            "twoshareBargainDetail/main",
+            "teamOrder/teamOrders/main",
+            "teamOrder/designDetail/main",
+            "teamOrder/joinTeam/main",
+            "teamOrder/orderDetail/main",
+            "teamOrder/teamConfirmOrder/main",
+            "teamOrder/teamOrderDetail/main",
+            "teamOrder/memberList/main"
+        ]
+    }, {
+        "root": "pages/personalCenter/",
+        "pages": [
+            "editInvoince/main",
+            "myAddress/main",
+            "myInvoince/main",
+            "newAddress/main",
+            "editAddress/main",
+            "newInvoince/main",
+            "myCollect/main",
+            "shoppingCart/main",
+            "becomeDesigner/main",
+            "becomeStore/main",
+            "applyCash/main",
+            "cashDetail/main",
+            "bindCard/main",
+            "designer/designerManager/main",
+            "designer/designerincomeDetail/main",
+            "designer/designerWallet/main",
+            "designer/designerOrder/main",
+            "designer/designerProduct/main",
+            "designer/designerSource/main",
+            "designer/editSource/main",
+            "storeManager/main",
+            "storeWallet/main",
+            "storeOrderStatics/main",
+            "storeIncomeDetail/main",
+            "distributionManager/main",
+            "distributionWallet/main",
+            "distributionIncomeDetail/main",
+            "distributionLower/main",
+            "distributionSecondLower/main",
+            "distributionQrcode/main"
+        ]
+    }],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "WeChat",
+        "navigationBarTextStyle": "black"
+    },
+    "tabBar": {
+        "color": "#999",
+        "backgroundColor": "#fafafa",
+        "selectedColor": "#333",
+        "borderStyle": "white",
+        "list": [{
+            "text": "首页",
+            "pagePath": "pages/home/main",
+            "iconPath": "static/tabs/home.png",
+            "selectedIconPath": "static/tabs/home-active.png"
+        }, {
+            "text": "",
+            "pagePath": "pages/white/main"
+        }, {
+            "text": "我的",
+            "pagePath": "pages/user/main",
+            "iconPath": "static/tabs/user.png",
+            "selectedIconPath": "static/tabs/user-active.png"
+        }]
+
+    }
+}

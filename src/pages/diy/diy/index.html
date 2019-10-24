@@ -1,0 +1,204 @@
+<html>
+<!--点图片，光标到下一个DIV内，如果没用DIV就创建一个新的-->
+
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        .diy-box {
+            position: relative;
+            background-size: 100% 100%;
+        }
+
+        .diy-region {
+            position: absolute;
+            overflow: hidden;
+            background-size: 100% 100%;
+        }
+
+        .diy-element-text {
+            width: 100%;
+            white-space: nowrap;
+        }
+
+        .diy-element-box {
+            position: absolute;
+        }
+
+        .diy-element {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+    <style>
+        /* 动态添加样式 */
+
+        @font-face {
+            font-family: '字体名称随便起';
+            src: url('../font/字体名称.eot');
+            src: url('../font/字体名称.woff') format('woff'), url('../font/字体名称.ttf') format('truetype'), url('../font/字体名称.svg') format('svg');
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="diy" id="diy">
+        xxxx
+    </div>
+    <script>
+        function createDiy(box, data, fontUrl) {
+
+
+
+            let diyBox = document.createElement('div');
+            diyBox.className = 'diy-box';
+            let diyRegion = document.createElement('div');
+            diyRegion.className = 'diy-region';
+            diyBox.appendChild(diyRegion);
+            box.innerHTML = '';
+
+            {
+                diyBox.setAttribute('style', `width:${data.width}px;
+            height:${data.height}px;
+            background-image: url(${data.backgroundImage})`)
+            }
+
+
+            {
+                let {
+                    left,
+                    top,
+                    width,
+                    height,
+                    backgroundImage
+                } = data.diyRegion;
+                diyRegion.setAttribute('style', `width:${width}px;
+            height:${height}px;
+            background-image: url(${backgroundImage});
+            left:${left}px;
+            top:${top}px`)
+            }
+
+
+            // 添加图层
+            {
+                function createFont(name, url) {
+                    let id = 'font-' + name;
+                    if (document.head.querySelector(id)) {
+                        return;
+                    }
+                    let style = document.createElement('style');
+                    style.id = id;
+
+                    style.innerHTML = `@font-face {
+                        font-family: '${name}';
+                        src: url('${url}/${name}.eot');
+                        src: url('${url}/${name}.woff') format('woff'), url('${url}/${name}.ttf') format('truetype'), url('${url}/${name}.svg') format('svg');
+                    }`;
+
+                    document.head.appendChild(style);
+                }
+
+
+
+                data.elements.map((element, index) => {
+                    let diyElementBox = document.createElement('div');
+                    diyElementBox.className = 'diy-element-box';
+                    diyElementBox.style = `width:${element.width}px;
+                            height:${element.height}px;
+                            transform: rotate(${element.angle}deg);
+                            left:${element.left}px;
+                            zIndex:${index+1};
+                            top:${element.top}px`;
+
+                    if (element.type === 'text') {
+                        let div = document.createElement('div');
+                        div.className = 'diy-element-text';
+                        div.style = `font-size:${element.height}px;
+                        height:${element.height}px;
+                        color:${element.color};
+                        line-height:${element.height}px`;
+                        div.innerText = element.value;
+                        diyElementBox.appendChild(div);
+                        createFont(element.value, fontUrl);
+                    } else {
+                        let img = document.createElement('img');
+                        img.className = 'diy-element';
+                        img.src = element.value;
+                        diyElementBox.appendChild(img);
+                    }
+
+                    diyRegion.appendChild(diyElementBox);
+                })
+
+            }
+
+            box.appendChild(diyBox);
+        }
+
+        let data = {
+            // 整体高宽
+            width: 300,
+            height: 350,
+            // 背景图 衣服
+            backgroundImage: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562919850742&di=608357c0f0cc44bb59f669fb56fbd65f&imgtype=0&src=http%3A%2F%2Fimage2.suning.cn%2Fuimg%2Fb2c%2Fnewcatentries%2F0070168967-000000000650856408_5_800x800.jpg",
+            // diy区域
+            diyRegion: {
+                left: 80,
+                top: 76,
+                width: 140,
+                height: 200,
+                backgroundImage: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1563857634561&di=c1f9428d3e34a5f4ac64005fb36c24d3&imgtype=0&src=http%3A%2F%2Fthumb.1010pic.com%2Fpic6%2Fres%2Fczsx%2Fweb%2FSTSource%2F2012071910450845063780%2FSYS201207191045539506694660_ST.files%2Fimage002.png"
+            },
+            // diy内容
+            elements: [{
+                id: 1,
+                type: "text",
+                value: "自定文字",
+                fontFamily: "",
+                color: 'red',
+                angle: 40,
+                width: 140,
+                height: 20,
+                left: 0,
+                top: 0
+            }, {
+                id: 3,
+                type: "material",
+                value: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562921692644&di=b4f47eb970fcfc905ecd331920877ce4&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F07%2F05%2F10577b17acb2926.jpg",
+                angle: 0,
+                width: 100,
+                height: 100,
+                left: 50,
+                top: 100
+            }, {
+                id: 3,
+                type: "image",
+                value: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562921692644&di=b4f47eb970fcfc905ecd331920877ce4&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F07%2F05%2F10577b17acb2926.jpg",
+                angle: 0,
+                width: 100,
+                height: 50,
+                left: 0,
+                top: 100
+            }, {
+                id: 3,
+                type: "doodling",
+                value: "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1562921692644&di=b4f47eb970fcfc905ecd331920877ce4&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F07%2F05%2F10577b17acb2926.jpg",
+                angle: 0,
+                width: 100,
+                height: 50,
+                left: 100,
+                top: 0
+            }]
+        }
+
+        let fontUrl = '字体下载地址/';
+        createDiy(document.querySelector('#diy'), data, fontUrl);
+    </script>
+</body>
+
+</html>
